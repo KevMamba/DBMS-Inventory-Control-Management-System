@@ -1,0 +1,25 @@
+Complex Queries
+
+1) Biggest money makers overall:
+ select i_id,i_name,SUM(i_price*sell_quantity) as moneys from items natural join sell natural join sell_map group by i_id,i_name order by moneys desc;
+
+2) Quantity of items in each warehouse by category:
+ select w_id,c_name,SUM(w_quantity) from w_map natural join items natural join category group by w_id,c_name order by w_id asc;
+
+3) Total money made from each category:
+ select c_id,SUM(i_price*sell_quantity) as moneys from items natural join sell natural join sell_map group by c_id order by c_id asc;
+
+4) Best quantity/price ratio  items in a category:
+ select i_name,sum(sell_quantity)/i_price as ratio from sell natural join sell_map natural join items group by i_name,i_price order by ratio desc;
+
+5) Most expensive item bought in orders of over 7000:
+ select sell_id,i_name from sell natural join sell_map natural join items where (sell_id,i_price*sell_quantity) in (select sell_id,max(i_price*sell_quantity) as money from sell natural join sell_map natural join items group by sell_id having sell_price>7000);
+
+6) Best suppliers in each category:
+ select sup_id,sup_name,c_name,sup_rating from category join supplier on sup_category=c_id where (c_id,sup_rating) in ( select c_id,MAX(sup_rating) from supplier join category on sup_category=c_id group by c_id order by c_id asc);
+
+7) View holding how much money each item has made:
+ create view moneyview as (select c_id,i_id,SUM(i_price*sell_quantity) as moneys from items natural join sell natural join sell_map group by i_id,c_id order by c_id asc);
+
+8) Biggest money makers in each category
+ select c_id,i_id,i_name,moneys from items natural join moneyview where (c_Id,moneys) in (select c_id,max(moneys) as moneys from moneyview group by moneyview.c_id order by c_id asc);

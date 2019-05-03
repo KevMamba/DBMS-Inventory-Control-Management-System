@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Warehouse</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	body{
+		background-color: orange;
+	}
+	#example2 {
+  box-sizing: border-box;
+  position: static;
+  width: 100%;
+  height: 100px;
+  padding: center;
+  border: 10px solid black;
+  text-align: center;
+  font-size: 300%;
+  font-family: "Gotham";
+}
+h3
+{
+	position: relative;
+	left:480px;
+	top: 10px;
+	font-family: "Helvetica";
+	font-size: 100px;
+}
+img{
+	position: relative;
+	left: 100px;
+}
+p1{
+	position: relative;
+	top: 180px;
+	right: 80px;
+}
+p2
+{
+	position: relative;
+	top: 180px;
+	right: 150px;
+}
+p3
+{
+	position: relative;
+	top: 180px;
+	right:250px;
+	font-size: 20px;
+}
+p{
+	position: relative;
+	left:750px;
+	font-size: 30px;
+}
+.blink{
+		width:200px;
+		height: 50px;
+		padding: 15px;	
+		text-align: center;
+		line-height: 30px;
+	}
+	span{
+		font-size: 25px;
+		font-family: cursive;
+		color: white;
+		animation: blink 1s linear infinite;
+	}
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
+</style>
+<body>
+	<div id="example2"> The Warehouse </div>
+	<h3><b> Bestsellers </b></h3>
+	<img src="beer.gif" alt="beer" width="150" height="300">
+	<p1><b>Upper Canada Light Beer</b></p1>
+	<img src="Wine.jpeg" alt="wine" width="250" height="300">
+	<p2><b>Cave Springs Dry Riesling Wine</b></p2>
+	<img src="Macaroons.png" alt="macaroons" width="300" height="300">
+	<p2><b>Two Bite Chocolate Macaroons</b><br><br><br><br><br><br></p2>
+	<img src="Cabbage.jpg" alt="cabbage" width="500" height="300">
+	<p3><b>Green Cabbages</b></p3>
+	<img src="Ham.jpg" alt="ham" width="300" height="300">
+	<p2><b>Italian Cooked Ham</b></p2>
+	<div class="blink"><span><br>Click here to register as our Supplier</span></div>
+</body>
+</html>

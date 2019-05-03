@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Warehouse</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	body{
+		background-color: #9966ff;
+	}
+	#example2 {
+  box-sizing: border-box;
+  position: static;
+  width: 100%;
+  height: 100px;
+  padding: center;
+  border: 10px solid purple;
+  text-align: center;
+  font-size: 300%;
+  font-family: "Gotham";
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #A101FE;
+  padding: 20px;
+}
+h3
+{
+	position: relative;
+	left:60px;
+}
+</style>
+<body>
+	<div id="example2"> The Warehouse </div>
+	<h3> Supplier Registration Form </h3>
+	<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="emailid">Email ID</label>
+    <input type="text" id="emailid" name="emailid" placeholder="Your email..">
+    <label for="Address">Address</label>
+    <input type="text" id="Address" name="Address" placeholder="Your address..">
+    <label for="Pincode">Pincode</label>
+    <input type="text" id="Pincode" name="Pincode" placeholder="Your pincode..">
+    <label for="items">Items you intend to sell</label>
+    <select id="items" name="items">
+      <option value="groceries">Groceries</option>
+      <option value="electronics">Electronics</option>
+      <option value="health">Health Care products</option>
+      <option value="beverages">Beverages</option>
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+	<input type="submit" value="Submit">
+    </select>
+
+</form>
+</div>
+</body>
+</html>

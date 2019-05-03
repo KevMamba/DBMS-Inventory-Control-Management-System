@@ -1,0 +1,25 @@
+Queries
+	
+1) Quantity of items in each warehouse - 
+SELECT w_id,sum(w_quantity) FROM W_MAP GROUP BY W_ID order by w_id asc;
+
+2) Adding a new supplier to the database -      *
+insert into supplier values(DEFAULT,4.8,'Mitchell Co.',5);
+
+3) Suppliers who have sold the most to us - 
+select s.sup_name,sum(b.buy_price) from supplier as s,buy as b where b.sup_id=s.sup_id group by s.sup_id order by sum(b.buy_price) desc limit 5;
+
+4) The items which have made the most money - 
+select i.i_id,i.i_name,sum(i_price) as money from sell as s,items as i,sell_map as sm where s.sell_id=sm.sell_id and sm.i_id=i.i_id group by i.i_id order by money desc;
+
+5) Types of wine we offer -  
+select * from items where i_name like '%Wine%' order by i_price desc;
+
+6) The suppliers who have best rating - 
+select sup_name,sup_rating,c_name from supplier,category where sup_category=c_id order by sup_rating desc limit 10;
+
+7) The costliest items -
+select i_name,i_price,i.c_id,c.c_name from items as i,category as c where i.c_id=c.c_id order by i_price desc limit 10;  
+
+8) Removing a category from our database - *
+delete from category where c_id=2 or c_id=1;
